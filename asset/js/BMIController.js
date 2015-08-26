@@ -18,10 +18,12 @@ var BMIController = {
 			weight = parseFloat(form.weight.value),
 			height = parseFloat(form.height.value),
 			result = 0;
+			
+		var callback = function(result) {
+			BMIController.showResult(result);
+		}
 		
-		result = BMIService.getIndex(weight, height);
-		
-		BMIController.showResult(result);
+		result = BMIService.getIndex(weight, height, callback);
 	},
 	
 	showResult: function(result) {

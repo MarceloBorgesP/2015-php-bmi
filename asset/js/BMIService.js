@@ -1,10 +1,16 @@
 var BMIService = {
 
 	getIndex: function(weight, height) {
-		if(typeof(weight) === 'number' && typeof(height) === 'number') {
-			return weight / (height * height);
-		}
-		return null;
+		$.ajax({
+			url: 'services/bmi.ation.php',
+			data: {'weight' : weight, 'height' : height},
+			success: function(result) {
+				callback(parseFloat(result));
+			},
+			error: function() {
+				callback(null);
+			}
+		});
 	},
 	
 	getDescription: function (index) {
