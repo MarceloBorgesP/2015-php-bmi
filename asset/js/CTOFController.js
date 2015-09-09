@@ -23,7 +23,7 @@ var CTOFController = {
 		};
 		
 		CTOFController.showLoading(true);
-		CTOFService.getIndex(celsius, callback);
+		CTOFService.convert(celsius, callback);
 	},
 	
 	showResult: function(result) {
@@ -33,7 +33,7 @@ var CTOFController = {
 	},
 	
 	showLoading: function(isLoading) {
-		document.querySelector('.label').innerHTML = isLoading ? 'loading...' : 'BMI Result'
+		document.querySelector('.label').innerHTML = isLoading ? 'loading...' : 'In Fahrenheit: '
 	}
 
 };

@@ -1,8 +1,8 @@
 var CTOFService = {
 
-	getIndex: function(celsius, callback) {
+	convert: function(celsius, callback) {
 		$.ajax({
-		  url: 'services/ctof.action.php',
+		  url: 'services/CTOF.action.php',
 		  data: {'celsius': celsius},
 		  success: function(result) {
 		  	callback(parseFloat(result));
@@ -11,11 +11,5 @@ var CTOFService = {
 		  	callback(null);
 		  }
 		});
-	},
-	
-	getDescription: function (index) {
-		//TODO to be implemented
-		return "";
 	}
-	
 };

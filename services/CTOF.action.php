@@ -3,10 +3,8 @@ require 'CTOFService.class.php';
 $celsius = $_GET['celsius'];
 $fahrenheit = 0.0;
 if(is_numeric($celsius)) {
-    $fahrenheit = CTOFService::getIndex($celsius);
+    $fahrenheit = CTOFService::convert($celsius);
 }
-
-sleep(2);
 
 echo $fahrenheit;
 ?>
